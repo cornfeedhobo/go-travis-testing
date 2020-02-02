@@ -1,0 +1,74 @@
+language: go
+
+go:
+  - "1.13.7"
+  - "1.13.6"
+  - "1.13.5"
+  - "1.13.4"
+  - "1.13.3"
+  - "1.13.2"
+  - "1.13.1"
+  - "1.13"
+  - "1.12.16"
+  - "1.12.15"
+  - "1.12.14"
+  - "1.12.13"
+  - "1.12.12"
+  - "1.12.11"
+  - "1.12.10"
+  - "1.12.9"
+  - "1.12.8"
+  - "1.12.7"
+  - "1.12.6"
+  - "1.12.5"
+  - "1.12.4"
+  - "1.12.3"
+  - "1.12.2"
+  - "1.12.1"
+  - "1.12"
+  - "1.11.13"
+  - "1.11.12"
+  - "1.11.11"
+  - "1.11.10"
+  - "1.11.9"
+  - "1.11.8"
+  - "1.11.7"
+  - "1.11.6"
+  - "1.11.5"
+  - "1.11.4"
+  - "1.11.3"
+  - "1.11.2"
+  - "1.11.1"
+  - "1.11"
+  - "1.10.8"
+  - "1.10.7"
+  - "1.10.6"
+  - "1.10.5"
+  - "1.10.4"
+  - "1.10.3"
+  - "1.10.2"
+  - "1.10.1"
+  - "1.10"
+  - "1.9.7"
+  - "1.9.6"
+  - "1.9.5"
+  - "1.9.4"
+  - "1.9.3"
+  - "1.9.2"
+  - "1.9.1"
+  - "1.9"
+
+install: false
+
+script:
+  - go test -v || travis_terminate 1
+  - go get github.com/mitchellh/gox
+  - CGO_ENABLED=0 gox -rebuild -ldflags="-s" -output="{{.Dir}}_{{.OS}}_{{.Arch}}_$(go version | cut -d' ' -f3)"
+
+deploy:
+  provider: releases
+  api_key:
+    secure: Fo3WhmhJB+gZ0wvUybQytg+tTcBnpCkafifnmOUj74zAbXbCnhoomIc9QhfNJciyrDV7bbVQCH9KmPiHP1bv/d6BE6Ft19hPtwdfreJ31TjuXEki0/WjH4iStv95AVhonxChMt4Whr96G0qPnEkmjF1+CurPA3v7FrqbAoYFrruO57I4uIIrHQYbW8N1fusX4AI4LgHqqJ5Kw5XHLvOqWd+ZsNd9t1O6rm49N7My3/xjYrG2T5uw/cycwIxFWYMD6joVNQ0r0DdPsjARkgKDqUZ0H9sbCem7FF/FnQN7bemJ5yiZKNnv5WBfOIpoh42fQFSnPyRLiIN8DQ+PualtEu4Y5Vn5xg80n9hcIV8wN9O8y8dGTd0vWnHpZaeHJ7mhBamahj5tHW7X444pLDPQTg6JYTI2javPj4hs4GpNnnieVkofVoTBsH3JxcxuSlLgNJ9dTZJFMF9wLDOfT9VSyAYpMx5GACLpoKFsVvWYbi9ZmjWtmJQfIas7DBOaWsLlimgb7Kk8Eh+CjaGPRWmvss+GwU2gbGBwQLWU/gZZabl8Y/E+aoL/UWziuv/X4fe0DHPHG6a3zviVVkkCuF6JxqfOf+8YU2zgdJqdPOwzQccMwTngvs+VMZ+7uXvJSg+COSDCziBSnnVEU7Spx8egzhabkJAGsFnvsKtDrkpEjpE=
+  skip_cleanup: true
+  file_glob: true
+  file: go-travis-testing*
