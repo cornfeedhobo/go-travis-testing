@@ -63,7 +63,8 @@ before_script:
 
 script:
   - go get github.com/mitchellh/gox
-  # - CGO_ENABLED=0 gox -rebuild -ldflags="-s" -output="{{.Dir}}_{{.OS}}_{{.Arch}}_$(go version | cut -d' ' -f3)"
+  - CGO_ENABLED=0 gox -rebuild -ldflags="-s" -output="{{.Dir}}_{{.OS}}_{{.Arch}}_$(go version | cut -d' ' -f3)"
+  - ls -lah .
 
 #deploy:
 #  provider: releases
