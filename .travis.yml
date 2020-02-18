@@ -10,7 +10,7 @@ script:
   - >
     gox
     -rebuild
-    -ldflags='s'
+    -ldflags='-s'
     -output="{{.Arch}}"
 #  - gox -rebuild -ldflags="-s" -output="{{.Dir}}_{{.OS}}_{{.Arch}}_$(go version | cut -d' ' -f3)"
 
