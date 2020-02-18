@@ -1,62 +1,7 @@
 language: go
 
 go:
-  # - "1.13.7"
-  # - "1.13.6"
-  # - "1.13.5"
-  # - "1.13.4"
-  # - "1.13.3"
-  # - "1.13.2"
-  # - "1.13.1"
-  # - "1.13"
-  # - "1.12.16"
-  # - "1.12.15"
-  # - "1.12.14"
-  # - "1.12.13"
-  # - "1.12.12"
-  # - "1.12.11"
-  # - "1.12.10"
-  # - "1.12.9"
-  # - "1.12.8"
-  # - "1.12.7"
-  # - "1.12.6"
-  # - "1.12.5"
-  # - "1.12.4"
-  # - "1.12.3"
-  # - "1.12.2"
-  # - "1.12.1"
-  # - "1.12"
-  # - "1.11.13"
-  # - "1.11.12"
-  # - "1.11.11"
-  # - "1.11.10"
-  # - "1.11.9"
-  # - "1.11.8"
-  # - "1.11.7"
-  # - "1.11.6"
-  # - "1.11.5"
-  # - "1.11.4"
-  # - "1.11.3"
-  # - "1.11.2"
-  # - "1.11.1"
-  # - "1.11"
-  # - "1.10.8"
-  # - "1.10.7"
-  # - "1.10.6"
-  # - "1.10.5"
-  # - "1.10.4"
-  # - "1.10.3"
-  # - "1.10.2"
-  # - "1.10.1"
-  # - "1.10"
-  # - "1.9.7"
-  # - "1.9.6"
-  # - "1.9.5"
-  # - "1.9.4"
-  # - "1.9.3"
-  # - "1.9.2"
-  # - "1.9.1"
-  - "1.9"
+  - '1.9'
 
 before_script:
   - go test -v || travis_terminate 1
@@ -71,7 +16,7 @@ script:
 deploy:
   provider: releases
   api_key:
-    secure: Fo3WhmhJB+gZ0wvUybQytg+tTcBnpCkafifnmOUj74zAbXbCnhoomIc9QhfNJciyrDV7bbVQCH9KmPiHP1bv/d6BE6Ft19hPtwdfreJ31TjuXEki0/WjH4iStv95AVhonxChMt4Whr96G0qPnEkmjF1+CurPA3v7FrqbAoYFrruO57I4uIIrHQYbW8N1fusX4AI4LgHqqJ5Kw5XHLvOqWd+ZsNd9t1O6rm49N7My3/xjYrG2T5uw/cycwIxFWYMD6joVNQ0r0DdPsjARkgKDqUZ0H9sbCem7FF/FnQN7bemJ5yiZKNnv5WBfOIpoh42fQFSnPyRLiIN8DQ+PualtEu4Y5Vn5xg80n9hcIV8wN9O8y8dGTd0vWnHpZaeHJ7mhBamahj5tHW7X444pLDPQTg6JYTI2javPj4hs4GpNnnieVkofVoTBsH3JxcxuSlLgNJ9dTZJFMF9wLDOfT9VSyAYpMx5GACLpoKFsVvWYbi9ZmjWtmJQfIas7DBOaWsLlimgb7Kk8Eh+CjaGPRWmvss+GwU2gbGBwQLWU/gZZabl8Y/E+aoL/UWziuv/X4fe0DHPHG6a3zviVVkkCuF6JxqfOf+8YU2zgdJqdPOwzQccMwTngvs+VMZ+7uXvJSg+COSDCziBSnnVEU7Spx8egzhabkJAGsFnvsKtDrkpEjpE=
+    secure: rNTom7aQxKM5UvkkjIzamNeJX1ZnXLMYVcIjoYGwjPAsarV2eZufY2yBBeAZx0hiyTUBiYQRBE8Akca7zjbBCyJaR/u4O0uNosHfPLcElORNw3b2nnGs6MZNqU6kSeoDy7WFP/kE319XN8WrYxaYsjKH57PNtdEUD1z3D1whtgllBhTJA974bE5Xtgi9wCDe3Au2w70qcgUY6hbQjW9zZYn5uw4boqjxA7R0aATPf9W5fBowJM1usut1//9rMJQUdrAYnzeNhsKDfcLxDnDg//zKBwjF4uAglONhygJSHMDMyaagXXIA72hkgewbJrBqO3OHJy9ThjI7V9MHi4kXE6eBs0X+eAxf7XrhO9PqsQM79Izw6qRryU0yQgTkaxI4IN1OtB4J5BaY96V+LkweDf2UB4w589jj+Ao6TBrSuTW4nL7VYLCtTtV0HLVgqXYVzs1Mxz5DNGLDJk/LnLK9kYi/deNi9cqMvAX7Q3LMvWc2v6dUwpYZDNqUE/t7/DnxL9+/RuaE1HMmZCG+DCYY4dec46loNr2RVr4J8mMqF2w6eyae8sQ+zjbtA9rmuuRC5fYCdMu1oMhz0UX1XM4yY7e3955D3/bkPfPMWyiCbTDmi/gHMk4QTWp27sadFwc+5x37ROZDSFFkDjeGx9Q+A2pMimp8XJcHuymN/9K5MeY=
   skip_cleanup: true
   file_glob: true
   file: go-travis-testing_*_*_go*
