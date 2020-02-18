@@ -17,10 +17,10 @@ script:
     -output="{{.Dir}}_{{.OS}}_{{.Arch}}_$(go version | cut -d' ' -f3)"
   - ls -lah .
 
-#deploy:
-#  provider: releases
-#  api_key:
-#    secure: rNTom7aQxKM5UvkkjIzamNeJX1ZnXLMYVcIjoYGwjPAsarV2eZufY2yBBeAZx0hiyTUBiYQRBE8Akca7zjbBCyJaR/u4O0uNosHfPLcElORNw3b2nnGs6MZNqU6kSeoDy7WFP/kE319XN8WrYxaYsjKH57PNtdEUD1z3D1whtgllBhTJA974bE5Xtgi9wCDe3Au2w70qcgUY6hbQjW9zZYn5uw4boqjxA7R0aATPf9W5fBowJM1usut1//9rMJQUdrAYnzeNhsKDfcLxDnDg//zKBwjF4uAglONhygJSHMDMyaagXXIA72hkgewbJrBqO3OHJy9ThjI7V9MHi4kXE6eBs0X+eAxf7XrhO9PqsQM79Izw6qRryU0yQgTkaxI4IN1OtB4J5BaY96V+LkweDf2UB4w589jj+Ao6TBrSuTW4nL7VYLCtTtV0HLVgqXYVzs1Mxz5DNGLDJk/LnLK9kYi/deNi9cqMvAX7Q3LMvWc2v6dUwpYZDNqUE/t7/DnxL9+/RuaE1HMmZCG+DCYY4dec46loNr2RVr4J8mMqF2w6eyae8sQ+zjbtA9rmuuRC5fYCdMu1oMhz0UX1XM4yY7e3955D3/bkPfPMWyiCbTDmi/gHMk4QTWp27sadFwc+5x37ROZDSFFkDjeGx9Q+A2pMimp8XJcHuymN/9K5MeY=
-#  skip_cleanup: true
-#  file_glob: true
-#  file: go-travis-testing_*
+deploy:
+  provider: releases
+  api_key:
+    secure: rNTom7aQxKM5UvkkjIzamNeJX1ZnXLMYVcIjoYGwjPAsarV2eZufY2yBBeAZx0hiyTUBiYQRBE8Akca7zjbBCyJaR/u4O0uNosHfPLcElORNw3b2nnGs6MZNqU6kSeoDy7WFP/kE319XN8WrYxaYsjKH57PNtdEUD1z3D1whtgllBhTJA974bE5Xtgi9wCDe3Au2w70qcgUY6hbQjW9zZYn5uw4boqjxA7R0aATPf9W5fBowJM1usut1//9rMJQUdrAYnzeNhsKDfcLxDnDg//zKBwjF4uAglONhygJSHMDMyaagXXIA72hkgewbJrBqO3OHJy9ThjI7V9MHi4kXE6eBs0X+eAxf7XrhO9PqsQM79Izw6qRryU0yQgTkaxI4IN1OtB4J5BaY96V+LkweDf2UB4w589jj+Ao6TBrSuTW4nL7VYLCtTtV0HLVgqXYVzs1Mxz5DNGLDJk/LnLK9kYi/deNi9cqMvAX7Q3LMvWc2v6dUwpYZDNqUE/t7/DnxL9+/RuaE1HMmZCG+DCYY4dec46loNr2RVr4J8mMqF2w6eyae8sQ+zjbtA9rmuuRC5fYCdMu1oMhz0UX1XM4yY7e3955D3/bkPfPMWyiCbTDmi/gHMk4QTWp27sadFwc+5x37ROZDSFFkDjeGx9Q+A2pMimp8XJcHuymN/9K5MeY=
+  skip_cleanup: true
+  file_glob: true
+  file: go-travis-testing_*_*_go*
