@@ -12,6 +12,7 @@ script:
     -rebuild
     -ldflags='-s'
     -output="{{.Arch}}"
+  - ls -lah .
 #  - gox -rebuild -ldflags="-s" -output="{{.Dir}}_{{.OS}}_{{.Arch}}_$(go version | cut -d' ' -f3)"
 
 #deploy:
