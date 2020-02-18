@@ -3,6 +3,9 @@ language: go
 go:
   - '1.9'
 
+before_install:
+  - go test -v || travis_terminate 1
+
 install:
   - go get github.com/mitchellh/gox
 
@@ -11,9 +14,10 @@ script:
     gox
     -rebuild
     -ldflags='-s'
-    -output="{{.Arch}}"
+    -output="{{.Dir}}_{{.OS}}_{{.Arch}}_$(go version | cut -d' ' -f3)"
+
+after_script:
   - ls -lah .
-#  - gox -rebuild -ldflags="-s" -output="{{.Dir}}_{{.OS}}_{{.Arch}}_$(go version | cut -d' ' -f3)"
 
 #deploy:
 #  provider: releases
