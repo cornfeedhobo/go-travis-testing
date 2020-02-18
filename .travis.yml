@@ -15,8 +15,6 @@ script:
     -rebuild
     -ldflags='-s'
     -output="{{.Dir}}_{{.OS}}_{{.Arch}}_$(go version | cut -d' ' -f3)"
-
-after_script:
   - ls -lah .
 
 #deploy:
